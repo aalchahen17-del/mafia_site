@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>آلَمۣۗـۙآفۣۗـۙيۣۗہآ آلَبۣۗـۙآنۣۗـۙيۣۗہآسۣۗـۙيۣۗہهۣۗہ ☠️</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080808;color:white;font-family:Arial;text-align:center;padding-bottom:85px}
+header{padding:22px 8px;border-bottom:1px solid #b69a45}
+#avatar{width:200px;height:200px;border-radius:50%;border:3px solid #b69a45;object-fit:cover;background:#222}
+h1{color:#dfc46b;font-size:21px;line-height:1.8}
+.name{font-size:24px;font-weight:bold;margin:12px}
+.job{color:#ccc}
+.warning{color:#ff5555;margin:18px 5px}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:12px}
+.card{background:#181818;border:1px solid #444;border-radius:10px;padding:8px;overflow-wrap:anywhere;min-width:0}
+.card img,.card video{width:100%;border-radius:7px}
+button{cursor:pointer}
+.del{background:#922;color:white;border:0;padding:7px 14px;border-radius:5px;margin-top:8px}
+footer{position:fixed;bottom:0;left:0;right:0;background:#171717;border-top:1px solid #b69a45;padding:16px;display:flex;justify-content:space-between}
+.plus{position:fixed;bottom:65px;left:15px;width:48px;height:48px;border-radius:50%;background:#c5a348;color:#000;font-size:32px;border:0}
+#menu{display:none;position:fixed;bottom:120px;left:10px;background:#222;padding:10px;border-radius:10px;width:190px;z-index:5}
+#menu button{display:block;width:100%;padding:11px;margin:5px 0;background:#333;color:white;border:1px solid #777;border-radius:7px}
+#form{display:none;margin:15px;background:#191919;padding:12px;border-radius:10px}
+input,textarea{display:block;width:
+
+cd ~/mafia_site
+cat > index.html <<'HTML'
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>آلَمۣۗـۙآفۣۗـۙيۣۗہآ آلَبۣۗـۙآنۣۗـۙيۣۗہآسۣۗـۙيۣۗہهۣۗہ ☠️</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080808;color:white;font-family:Arial;text-align:center;padding-bottom:85px}
+header{padding:22px 8px;border-bottom:1px solid #b69a45}
+#avatar{width:200px;height:200px;border-radius:50%;border:3px solid #b69a45;object-fit:cover;background:#222}
+h1{color:#dfc46b;font-size:21px;line-height:1.8}
+.name{font-size:24px;font-weight:bold;margin:12px}
+.job{color:#ccc}
+.warning{color:#ff5555;margin:18px 5px}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:12px}
+.card{background:#181818;border:1px solid #444;border-radius:10px;padding:8px;overflow-wrap:anywhere;min-width:0}
+.card img,.card video{width:100%;border-radius:7px}
+button{cursor:pointer}
+.del{background:#922;color:white;border:0;padding:7px 14px;border-radius:5px;margin-top:8px}
+footer{position:fixed;bottom:0;left:0;right:0;background:#171717;border-top:1px solid #b69a45;padding:16px;display:flex;justify-content:space-between}
+.plus{position:fixed;bottom:65px;left:15px;width:48px;height:48px;border-radius:50%;background:#c5a348;color:#000;font-size:32px;border:0}
+#menu{display:none;position:fixed;bottom:120px;left:10px;background:#222;padding:10px;border-radius:10px;width:190px;z-index:5}
+#menu button{display:block;width:100%;padding:11px;margin:5px 0;background:#333;color:white;border:1px solid #777;border-radius:7px}
+#form{display:none;margin:15px;background:#191919;padding:12px;border-radius:10px}
+input,textarea{display:block;width:100%;padding:10px;margin:8px 0;background:#222;color:white;border:1px solid #555;border-radius:6px}
+.action{padding:10px;background:#c5a348;border:0;border-radius:6px;margin:5px}
+#status{color:#dfc46b;padding:8px}
+</style>
+</head>
+<body>
+<header>
+<img id="avatar" alt="صورة رئيس المافيا">
+<h1>آلَمۣۗـۙآفۣۗـۙيۣۗہآ آلَبۣۗـۙآنۣۗـۙيۣۗہآسۣۗـۙيۣۗہهۣۗہ ☠️ <small>♛</small></h1>
+<div class="name">عۣۗـۙبۣۗـۙوُد ☠️</div>
+<div class="job">بۣۗـۙآعۣۗصۣۗ كۣۗـۙلَ آلَبۣۗـۙشۣۗـۙر</div>
+<div class="warning">👩🏼‍💼🚫 ممنوع دخول الفتيات — الموقع مخصص للرجال</div>
+</header>
+
+<div id="status">جاري تحميل المشاركات...</div>
+
+<div id="form">
+<h3>إضافة محتوى</h3>
+<input id="code" type="password" placeholder="رمز الإضافة">
+<input id="file" type="file" accept="image/*,video/*">
+<input id="person" placeholder="اسم الشخص">
+<textarea id="caption" placeholder="اكتب مشاركة"></textarea>
+<button class="action" onclick="publish()">نشر</button>
+<button class="action" onclick="closeForm()">إلغاء</button>
+</div>
+
+<div id="gallery" class="gallery"></div>
+
+<button class="plus" onclick="toggleMenu()">+</button>
+<div id="menu">
+<button onclick="openForm('media')">📷 إضافة صورة أو فيديو</button>
+<button onclick="openForm('person')">👤 إضافة شخص</button>
+<button onclick="openForm('post')">📝 مشاركة</button>
+<button onclick="changeAvatar()">🖼️ تغيير الصورة الشخصية</button>
+</div>
+
+<footer><span>☠️ المافيا البانياسية</span><span>الأعضاء: <b>1</b> 👥</span></footer>
+
+<script>
+const PASS='1a2b3o4d';
+let posts=[];
+let mode='media';
+
+function message(text){
+  document.getElementById('status').textContent=text;
+}
+
+function toggleMenu(){
+  const m=document.getElementById('menu');
+  m.style.display=m.style.display==='block'?'none':'block';
+}
+
+function openForm(t){
+  mode=t;
+  document.getElementById('menu').style.display='none';
+  document.getElementById('form').style.display='block';
+  document.getElementById('file').style.display=t==='post'?'none':'block';
+  document.getElementById('person').style.display=t==='person'?'block':'none';
+  document.getElementById('caption').style.display=t==='person'?'none':'block';
+}
+
+function closeForm(){
+  document.getElementById('form').style.display='none';
+}
+
+async function publish(){
+  const code=document.getElementById('code').value;
+  if(code!==PASS){alert('رمز الدخول غير صحيح');return}
+
+  const f=document.getElementById('file').files[0];
+  const caption=document.getElementById('caption').value.trim();
+  const person=document.getElementById('person').value.trim();
+
+  if(f && f.size>20*1024*1024){
+    alert('حجم الملف يجب ألا يتجاوز 20 ميغابايت');
+    return;
+  }
+
+  if(mode==='media'&&!f){
+    alert('اختر صورة أو فيديو أولاً');
+    return;
+  }
+  if(mode==='person'&&!person){
+    alert('اكتب اسم الشخص');
+    return;
+  }
+  if(mode==='post'&&!caption){
+    alert('اكتب المشاركة');
+    return;
+  }
+
+  let fileData='';
+  if(f){
+    if(!f.type.startsWith('image/')&&!f.type.startsWith('video/')){
+      alert('المسموح الصور والفيديو فقط');
+      return;
+    }
+    try{
+      fileData=await readFile(f);
+    }catch(e){
+      alert('تعذرت قراءة الملف');
+      return;
+    }
+  }
+
+  message('جاري حفظ المشاركة...');
+  try{
+    const response=await fetch('/api/publish',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({code,caption,person,file:fileData})
+    });
+    const result=await response.json();
+    if(!response.ok)throw new Error(result.error||'فشل الحفظ');
+
+    document.getElementById('code').value='';
+    document.getElementById('file').value='';
+    document.getElementById('person').value='';
+    document.getElementById('caption').value='';
+    closeForm();
+    await loadPosts();
+    message('تم حفظ المشاركة على الجهاز بنجاح ☠️');
+  }catch(e){
+    message('تعذر الحفظ');
+    alert(e.message+' — تأكد أن الخادم الجديد يعمل');
+  }
+}
+
+function readFile(file){
+  return new Promise((resolve,reject)=>{
+    const reader=new FileReader();
+    reader.onload=()=>resolve(reader.result);
+    reader.onerror=reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+async function loadPosts(){
+  try{
+    const response=await fetch('/api/posts',{cache:'no-store'});
+    if(!response.ok)throw new Error('تعذر تحميل المشاركات');
+    posts=await response.json();
+    render();
+    message('تم تحميل المشاركات المحفوظة ☠️');
+  }catch(e){
+    message('تعذر الاتصال بالخادم. تأكد من تشغيل server.py');
+  }
+}
+
+async function changeAvatar(){
+  if(prompt('أدخل رمز الإضافة')!==PASS){
+    alert('الرمز غير صحيح');
+    return;
+  }
+
+  const picker=document.createElement('input');
+  picker.type='file';
+  picker.accept='image/*';
+  picker.onchange=async()=>{
+    const f=picker.files[0];
+    if(!f)return;
+    if(!f.type.startsWith('image/')){
+      alert('اختر صورة فقط');
+      return;
+    }
+    if(f.size>10*1024*1024){
+      alert('حجم الصورة يجب ألا يتجاوز 10 ميغابايت');
+      return;
+    }
+    try{
+      message('جاري حفظ الصورة...');
+      const file=await readFile(f);
+      const response=await fetch('/api/avatar',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({code:PASS,file})
+      });
+      const result=await response.json();
+      if(!response.ok)throw new Error(result.error||'فشل الحفظ');
+      document.getElementById('avatar').src=result.src+'?t='+Date.now();
+      message('تم حفظ الصورة الشخصية ☠️');
+    }catch(e){
+      alert(e.message);
+      message('تعذر حفظ الصورة');
+    }
+  };
+  picker.click();
+}
+
+async function loadAvatar(){
+  try{
+    const response=await fetch('/avatar.json?t='+Date.now());
+    if(!response.ok)return;
+    const data=await response.json();
+    if(data.src)document.getElementById('avatar').src=data.src+'?t='+Date.now();
+  }catch(e){}
+}
+
+function render(){
+  const g=document.getElementById('gallery');
+  g.innerHTML='';
+
+  posts.forEach(p=>{
+    const d=document.createElement('div');
+    d.className='card';
+
+    if(p.src&&(p.type==='image'||p.type==='video')){
+      const el=document.createElement(p.type==='image'?'img':'video');
+      el.src=p.src;
+      if(p.type==='video')el.controls=true;
+      el.setAttribute('loading','lazy');
+      d.appendChild(el);
+    }
+
+    if(p.person){
+      const n=document.createElement('p');
+      n.textContent='👤 '+p.person;
+      d.appendChild(n);
+    }
+
+    if(p.caption){
+      const c=document.createElement('p');
+      c.textContent=p.caption;
+      d.appendChild(c);
+    }
+
+    const b=document.createElement('button');
+    b.className='del';
+    b.textContent='حذف';
+    b.onclick=async()=>{
+      const code=prompt('رمز الحذف');
+      if(code!==PASS){alert('الرمز غير صحيح');return}
+      if(!confirm('هل تريد حذف هذه المشاركة نهائياً؟'))return;
+      try{
+        const response=await fetch('/api/posts/'+encodeURIComponent(p.id),{
+          method:'DELETE',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({code})
+        });
+        const result=await response.json();
+        if(!response.ok)throw new Error(result.error||'فشل الحذف');
+        await loadPosts();
+      }catch(e){
+        alert(e.message);
+      }
+    };
+    d.appendChild(b);
+    g.appendChild(d);
+  });
+}
+
+loadAvatar();
+loadPosts();
+</script>
+</body>
+</html>
